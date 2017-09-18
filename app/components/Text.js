@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import TextField from 'material-ui/TextField';
-import { Header, Subheader } from 'react/material-ui';
-import CheckBox from 'react/material-ui';
-import connect from 'react-redux';
+import Subheader from 'material-ui/Subheader';
+import CheckBox from 'material-ui/Checkbox';
+import RaisedButton from 'material-ui/RaisedButton';
+import { connect } from 'react-redux';
+import Logo from './n-36.jpg';
+
+const style1 = {
+  margin: 120
+
+};
+
 
  class TextBox extends React.Component {
 
@@ -63,39 +71,44 @@ handleInput6(event){
 
   render(){
     return (
-        <div styles= {{ position: "fixed", width: "100%" }}>
-        <Header styles={{ title: "LET'S GET STARTED"}}
-        <Subheader styles={{ text: "Business Name"  }}/>
-          <div styles= {{position: "center", width: "40%", height: "40px"  }}>
-            <TextField id='t1' value= { onChange = this.handleInput1  } />
-          </div>
-            <Subheader styles={{ text: "Business Email"  }}/>
-          <div styles= {{position: "center", width: "40%" , height: "40px" }}>
-            <TextField id='t2' value= {onChange = this.handleInput2 } />
+        <div>
+          <div className="logo">
+            <img src={Logo}></img>
             </div>
-              <Subheader styles={{ text: "Create a Username"  }}/>
-          <div styles= {{position: "center", width: "40%", height: "40px"}}>
-            <TextField id='t3' value= {onChange = this.handleInput3 } />
+          <Subheader style={{ color: "#3498DB", fontSize:"20px"}}>LET'S GET STARTED</Subheader>
+          <div >
+            <TextField id='t1'   hintText="Enter Business Name" floatingLabelText="Business Name" type="text" onChange = {this.handleInput1} />
           </div>
-            <Subheader styles={{ text: "Password"  }}/>
-          <div styles= {{position: "center", width: "40%", height: "40px" }}>
-            <TextField id='t4' value= {onChange = this.handleInput4 } />
-          </div>
-            <Subheader styles={{ text: "Website"  }}/>
-          <div styles= {{position: "center", width: "40%", height: "40px" }}>
-            <TextField id='t5' value= {onChange = this.handleInput5 } />
-          </div>
-          <Subheader styles={{ text: "Type of Business"  }}/>
-          <div styles= {{position: "center", width: "40%", height: "40px" }}>
-            <TextField id='t6' value= {onChange = this.handleInput6 } />
-          </div>
-          <Subheader styles={{ text: "Terms of Service" }}/>
+
           <div>
-          <CheckBox/>
+            <TextField id='t2' hintText="Hint Text" errorText="Please enter a valid email address" hintText="Enter Business Email" floatingLabelText="Business Email" type="text" onChange = {this.handleInput2} />
+            </div>
+
+          <div>
+            <TextField id='t3' hintText="Enter Username" floatingLabelText="Create a Username" type="text"onChange = {this.handleInput3} />
           </div>
-            <Subheader styles={{ text: "Privacy Policy" }}/>
+
+          <div>
+            <TextField id='t4'  hintText="Hint Text" errorText="Password should have six characters" hintText="Enter Password" floatingLabelText={<span>Password<code>6characters|1uppercase|1lowercase|1digit</code></span>}  type="password"onChange = {this.handleInput4 } />
+          </div>
+
+          <div>
+            <TextField id='t5' hintText="Enter Website" floatingLabelText={<span>Website<code>(Optional)</code></span>} type="text"onChange = {this.handleInput5}/>
+          </div>
+
+          <div>
+            <TextField id='t6' hintText="Enter Type of Business" floatingLabelText="Type of Business" type="text"onChange = {this.handleInput6}/>
+          </div>
+          <Subheader style={{ color: "grey"}}>Terms of Service</Subheader>
+          <div>
+          <CheckBox style={{ color: "light grey"}} label={<span>I have read and I do accept<a href=''> terms and services</a></span>}/>
+          </div>
+          <Subheader style={{ color: "grey"}}>Privacy Policy</Subheader>
             <div>
-            <CheckBox/>
+            <CheckBox style={{ color: "light grey"}} label={<span>I have read and I do accept<a href=''> privacy policy</a></span>}/>
+            </div>
+            <div>
+                <RaisedButton label="REGISTER" primary={true} style={style1} />
             </div>
       </div>
 
@@ -105,27 +118,27 @@ handleInput6(event){
 }
 
 function mapStateToProps(state){
-  if (state.red.value1){
-    value1: val1
+  if (state.reducer1){
+    value1: newState
   }
 
-if (state.red2.value2){
-  value2: val2
+if (state.reducer1){
+  value2: newState
 }
 
-if (state.red3.value3){
-  value3: val3
+if (state.reducer1){
+  value3: newState
 }
 
-if (state.red4.value4){
-  value4: val4
+if (state.reducer1){
+  value4: newState
 }
 
-if (state.red5.value5){
-  value4: val5
+if (state.reducer1){
+  value4: newState
 }
-if (state.red6.value5){
-  value4: val5
+if (state.reducer1){
+  value4: newState
 }
 
 else return {

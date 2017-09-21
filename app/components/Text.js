@@ -75,7 +75,7 @@ handleInput6(event){
           <div className="logo">
             <img src={Logo}></img>
             </div>
-          <Subheader style={{ color: "#3498DB", fontSize:"20px"}}>LET'S GET STARTED</Subheader>
+          <Subheader style={{ color: "#3498DB", fontSize:"20px"}}>LET&#39;S GET STARTED</Subheader>
           <div >
             <TextField id='t1'   hintText="Enter Business Name" floatingLabelText="Business Name" type="text" onChange = {this.handleInput1} />
           </div>

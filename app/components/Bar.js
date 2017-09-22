@@ -7,11 +7,8 @@ export default class Bar extends React.Component {
   render(){
     return(
       <div style={{width: "100%"}}>
-    <img src={Logo}></img>
-    </div>
-
-
-
+        <img src={Logo}></img>
+      </div>
     );
   }
 }

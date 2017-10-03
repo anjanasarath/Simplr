@@ -6,14 +6,41 @@ import CheckBox from 'material-ui/Checkbox';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
 import Logo from '../simplr_img/n-36.jpg';
 import { reduxForm } from 'redux-form';
 
 const style1 = {
   margin: 120
-
 };
+const paperStyle = {
+  height: 900,
+  width: 700,
+  margin: 10,
+  textAlign: 'center',
+  display: 'inline-block'
+};
+const subheaderStyle = {
+  color: "grey",
+  textAlign: "left",
+  paddingLeft: "220px"
+};
+const textAlignCenter = {
+  marginLeft: '30%',
+  width: '100%'
+};
+const textAlignLeft = {
+  textAlign: "left"
+};
+const getStartedStyle = {
+  color: "#3498DB",
+  fontSize:"20px"
+}
+
+
+const label1 = (<span>I have read and I do accept<a href=''> terms and services</a></span>);
+const label2 = (<span>I have read and I do accept<a href=''> privacy policy</a></span>);
 
 class SignupForm extends React.Component {
   constructor(props){
@@ -162,97 +189,101 @@ class SignupForm extends React.Component {
     return (
         <div>
           <form id='signupForm' onSubmit={(event) => this.handleSubmit(event)}>
-            <div className="logo">
-              <img src={Logo}></img>
+            <Paper style={paperStyle} zDepth={5}>
+              <div className="logo">
+                <img src={Logo}></img>
               </div>
-            <Subheader style={{ color: "#3498DB", fontSize:"20px"}}>LET&#39;S GET STARTED</Subheader>
-            <div >
-              <TextField id='t1'
-                hintText="Enter Business Name"
-                floatingLabelText="Business Name"
-                type="text"
-                {...businessName}
-                onChange = {this.handleInput1} />
-            </div>
-
-            <div>
-              <TextField id='t2'
-                hintText="Enter Business Email"
-                floatingLabelText="Business Email"
-                type="text"
-                {...businessEmail}
-                errorText={this.state.errors.businessEmail
-                    ? this.state.errors.businessEmail
-                    : ''}
-                onChange = {this.handleInput2} />
+              <Subheader style={getStartedStyle}>LET&#39;S GET STARTED</Subheader>
+              <div>
+                <TextField id='t1'
+                  hintText="Enter Business Name"
+                  floatingLabelText="Business Name"
+                  type="text"
+                  {...businessName}
+                  onChange = {this.handleInput1} />
               </div>
 
-            <div>
-              <TextField id='t3'
-                hintText="Enter Username"
-                floatingLabelText="Create a Username"
-                type="text"
-                {...userName}
-                onChange = {this.handleInput3} />
-            </div>
+              <div>
+                <TextField id='t2'
+                  hintText="Enter Business Email"
+                  floatingLabelText="Business Email"
+                  type="text"
+                  {...businessEmail}
+                  errorText={this.state.errors.businessEmail
+                      ? this.state.errors.businessEmail
+                      : ''}
+                  onChange = {this.handleInput2} />
+                </div>
 
-            <div>
-              <TextField id='t4'
-                hintText="Enter Password"
-                floatingLabelText={<span>Password <code>6characters|1uppercase|1lowercase|1digit</code></span>}
-                type="password"
-                {...password}
-                errorText={this.state.errors.password
-                    ? this.state.errors.password
-                    : ''}
-                onChange = {this.handleInput4 } />
-            </div>
+              <div>
+                <TextField id='t3'
+                  hintText="Enter Username"
+                  floatingLabelText="Create a Username"
+                  type="text"
+                  {...userName}
+                  onChange = {this.handleInput3} />
+              </div>
 
-            <div>
-              <TextField id='t5'
-                hintText="Enter Website"
-                floatingLabelText={<span>Website<code>(Optional)</code></span>}
-                type="text"
-                {...website}
-                onChange = {this.handleInput5}/>
-            </div>
+              <div>
+                <TextField id='t4'
+                  hintText="Enter Password"
+                  floatingLabelText={<span>Password<code>&nbsp;6characters|1uppercase|1lowercase|1digit</code></span>}
+                  type="password"
+                  {...password}
+                  errorText={this.state.errors.password
+                      ? this.state.errors.password
+                      : ''}
+                  onChange = {this.handleInput4 } />
+              </div>
 
-            <div>
-              <TextField id='t6'
-                hintText="Enter Type of Business"
-                floatingLabelText="Type of Business"
-                type="text"
-                {...typeOfBusiness}
-                onChange = {this.handleInput6}/>
-            </div>
-            <Subheader style={{ color: "grey"}}>Terms of Service</Subheader>
-            <div>
-              <CheckBox
-                style={{ color: "light grey"}}
-                label={<span>I have read and I do accept<a href=''> terms and services</a></span>}
-                {...termsAndCondition}
-                onCheck={this.handleInput7}/>
-            </div>
-            <Subheader style={{ color: "grey"}}>Privacy Policy</Subheader>
-            <div>
-              <CheckBox
-                style={{ color: "light grey"}}
-                label={<span>I have read and I do accept<a href=''> privacy policy</a></span>}
-                {...privacyPolicy}
-                onCheck={this.handleInput8}/>
-            </div>
-            <div>
-              <RaisedButton label="REGISTER" primary={true} style={style1} onClick={this.openDialog} />
-              <Dialog
-                title="Registration Completed"
-                actions={actions}
-                modal={false}
-                open={this.state.openDialog}
-                onRequestClose={this.closeDialog}
-              >
-                Successfully registered!
-              </Dialog>
-            </div>
+              <div>
+                <TextField id='t5'
+                  hintText="Enter Website"
+                  floatingLabelText={<span>Website<code>(Optional)</code></span>}
+                  type="text"
+                  {...website}
+                  onChange = {this.handleInput5}/>
+              </div>
+
+              <div>
+                <TextField id='t6'
+                  hintText="Enter Type of Business"
+                  floatingLabelText="Type of Business"
+                  type="text"
+                  {...typeOfBusiness}
+                  onChange = {this.handleInput6}/>
+              </div>
+              <Subheader style={subheaderStyle}>Terms of Service</Subheader>
+              <div>
+                <CheckBox
+                  style={textAlignCenter}
+                  labelStyle={textAlignLeft}
+                  label={label1}
+                  {...termsAndCondition}
+                  onCheck={this.handleInput7}/>
+              </div>
+              <Subheader style={subheaderStyle}>Privacy Policy</Subheader>
+              <div>
+                <CheckBox
+                  style={textAlignCenter}
+                  labelStyle={textAlignLeft}
+                  label={label2}
+                  {...privacyPolicy}
+                  onCheck={this.handleInput8}/>
+              </div>
+              <div>
+                <RaisedButton label="REGISTER" primary={true} style={style1} onClick={this.openDialog} />
+                <Dialog
+                  title="Registration Completed"
+                  actions={actions}
+                  modal={false}
+                  open={this.state.openDialog}
+                  onRequestClose={this.closeDialog}
+                >
+                  Successfully registered!
+                </Dialog>
+              </div>
+            </Paper>
           </form>
         </div>
     );

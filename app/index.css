@@ -18,17 +18,17 @@ li{
 .container1 {
   margin: 0 auto;
   max-width: 600px;
-  border: 1px solid lightgrey;
   display: flex;
   justify-content: center;
 }
 .logo {
   margin-top: 20px;
-  margin-left: -80px;
+  margin-left: -500px;
 }
 
 .textField {
   height: 50px;
+  padding-left: 50px;
 }
 .textFieldInput {
   border: 1px solid grey;
